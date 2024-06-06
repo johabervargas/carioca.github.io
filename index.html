@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Outro Site</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+        // Definindo os links
+        const links = [
+            "https://app.powerbi.com/view?r=eyJrIjoiYWY4OThjNTAtYmE4Ni00NGVjLTliNjYtMTc2NTRkYjMyOGNlIiwidCI6IjM1NmIxYzViLTYwMzYtNDMyYy1hOGI2LWM3YmM2YWFlMGQ2YyJ9&pageName=ReportSectiond33e2543f29daadcadf0",
+            "https://app.powerbi.com/view?r=eyJrIjoiYWY4OThjNTAtYmE4Ni00NGVjLTliNjYtMTc2NTRkYjMyOGNlIiwidCI6IjM1NmIxYzViLTYwMzYtNDMyYy1hOGI2LWM3YmM2YWFlMGQ2YyJ9&pageName=24805a5f000091e73c21"
+        ];
+
+        let currentIndex = 0;
+
+        function changeIframeSource() {
+            // Alterna entre os links
+            currentIndex = (currentIndex + 1) % links.length;
+            document.getElementById('contentFrame').src = links[currentIndex];
+        }
+
+        // Troca o link a cada 30 segundos
+        setInterval(changeIframeSource, 30000);
+    </script>
+</head>
+<body>
+    <iframe id="contentFrame" src="https://app.powerbi.com/view?r=eyJrIjoiYWY4OThjNTAtYmE4Ni00NGVjLTliNjYtMTc2NTRkYjMyOGNlIiwidCI6IjM1NmIxYzViLTYwMzYtNDMyYy1hOGI2LWM3YmM2YWFlMGQ2YyJ9&pageName=ReportSectiond33e2543f29daadcadf0"></iframe>
+</body>
+</html>
